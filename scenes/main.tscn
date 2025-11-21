@@ -1,3 +1,9 @@
-[gd_scene format=3 uid="uid://ca6ep2c1ulwod"]
+[gd_scene load_steps=2 format=3 uid="uid://ca6ep2c1ulwod"]
+
+[ext_resource type="PackedScene" uid="uid://yebgnxmfcxcn" path="res://scenes/ui/game_ui.tscn" id="1_o5qli"]
 
 [node name="Main" type="Node2D"]
+
+[node name="GameUi" parent="." instance=ExtResource("1_o5qli")]
+offset_right = 1152.0
+offset_bottom = 648.0
