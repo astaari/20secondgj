@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://yebgnxmfcxcn"]
+[gd_scene load_steps=3 format=3 uid="uid://yebgnxmfcxcn"]
 
 [ext_resource type="Script" uid="uid://c47ill7eambgt" path="res://scripts/ui/game_ui.gd" id="1_gwk6t"]
+[ext_resource type="FontFile" uid="uid://ctdl3phqcehsb" path="res://art/ui/numbers.png" id="2_xjfbv"]
 
 [node name="GameUi" type="MarginContainer"]
 anchors_preset = 15
@@ -22,8 +23,8 @@ custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 32
-text = "20.0
-"
+theme_override_fonts/font = ExtResource("2_xjfbv")
+theme_override_font_sizes/font_size = 48
+text = "1234567890"
 horizontal_alignment = 1
 vertical_alignment = 3

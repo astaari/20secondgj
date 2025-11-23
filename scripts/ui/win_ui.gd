@@ -7,4 +7,5 @@ func _on_return_to_menu_button_up() -> void:
 	get_tree().change_scene_to_file("res://scenes/title.tscn")
 
 func _on_retry_button_up() -> void:
+	call_deferred("queue_free")
 	get_tree().reload_current_scene()

@@ -1,17 +1,36 @@
-[gd_scene load_steps=2 format=3 uid="uid://baduamebprafn"]
+[gd_scene load_steps=7 format=3 uid="uid://baduamebprafn"]
 
 [ext_resource type="Script" uid="uid://dts88nl10n6lw" path="res://scripts/title.gd" id="1_4ignj"]
+[ext_resource type="Texture2D" uid="uid://c8xwv48m5857e" path="res://art/ui/play_button.png" id="2_wosw1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p6dhs"]
+texture = ExtResource("2_wosw1")
+region_rect = Rect2(0, 0, 65, 27)
+modulate_color = Color(0.3854925, 0.38549247, 0.38549247, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wosw1"]
+texture = ExtResource("2_wosw1")
+region_rect = Rect2(0, 0, 65, 27)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pyl7j"]
+texture = ExtResource("2_wosw1")
+region_rect = Rect2(65.37428, 0, 64.62572, 26.602745)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wosw1"]
 
 [node name="title" type="Node2D"]
 script = ExtResource("1_4ignj")
 
 [node name="Button" type="Button" parent="."]
-offset_left = 143.0
-offset_top = 454.0
-offset_right = 447.0
-offset_bottom = 507.0
+offset_left = 444.0
+offset_top = 501.0
+offset_right = 619.0
+offset_bottom = 556.0
 theme_override_font_sizes/font_size = 32
-text = "Play"
+theme_override_styles/normal = SubResource("StyleBoxTexture_p6dhs")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_wosw1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pyl7j")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wosw1")
 
 [node name="Title" type="Label" parent="."]
 offset_left = 51.0

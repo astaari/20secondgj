@@ -13,3 +13,11 @@ config_version=5
 config/name="20secondgj"
 run/main_scene="uid://baduamebprafn"
 config/features=PackedStringArray("4.5", "Forward Plus")
+
+[file_customization]
+
+folder_colors={
+"res://art/": "orange",
+"res://scenes/": "purple",
+"res://scripts/": "yellow"
+}

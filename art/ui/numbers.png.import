@@ -1,0 +1,25 @@
+[remap]
+
+importer="font_data_image"
+type="FontFile"
+uid="uid://ctdl3phqcehsb"
+path="res://.godot/imported/numbers.png-1c94a4d92998117804a7549b6df1d618.fontdata"
+
+[deps]
+
+source_file="res://art/ui/numbers.png"
+dest_files=["res://.godot/imported/numbers.png-1c94a4d92998117804a7549b6df1d618.fontdata"]
+
+[params]
+
+character_ranges=PackedStringArray("48", "49", "50", "51", "52", "53", "54", "55", "56", "57")
+kerning_pairs=PackedStringArray()
+columns=10
+rows=1
+image_margin=Rect2i(0, 0, 0, 0)
+character_margin=Rect2i(0, 0, 0, 0)
+ascent=0
+descent=0
+fallbacks=[]
+compress=true
+scaling_mode=2

@@ -20,22 +20,31 @@ func _ready() -> void:
 	
 	pass
 
+
+func update_time_label():
+	#TODO: Put back as float when we get decimal
+	timer_ui.text = "%d" % GAME_TIME
+
 func _placehold_gameover():
 	print("Game over")
+	#Update game_ui
+	GAME_TIME = 0.0
+	state = GAMEOVER
+	update_time_label()
 	#Spawn in win_ui
 	var inst = WIN_UI.instantiate()
 	get_parent().add_child(inst)
 	inst.size = inst.base_size
 	inst.global_position = (global_position + size) / 2.0 - (inst.size/2.0)
-	#Update game_ui too
-	GAME_TIME = 0.0
-	timer_ui.text = "%.2f" % GAME_TIME
-	state = GAMEOVER
+	
+	
+
+	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if state == PLAY:
 		GAME_TIME-=delta
-		timer_ui.text = "%.2f" % GAME_TIME
+		update_time_label()
 	
 	
