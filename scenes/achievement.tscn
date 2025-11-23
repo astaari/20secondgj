@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://denhtb8gbp4c4"]
+
+[ext_resource type="Texture2D" uid="uid://bxwjgdelg4c3e" path="res://art/sprites/achievements/achievement1.png" id="1_4cbr5"]
+[ext_resource type="Script" uid="uid://dn1l488efogc2" path="res://scripts/ui/achievement.gd" id="1_rnxx6"]
+
+[node name="Achievement" type="Node2D"]
+script = ExtResource("1_rnxx6")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 172.0
+offset_bottom = 172.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel"]
+position = Vector2(85, 72)
+scale = Vector2(4, 4)
+texture = ExtResource("1_4cbr5")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_top = 136.0
+offset_right = 172.0
+offset_bottom = 172.0
+text = ". . . . . . . ."
+horizontal_alignment = 1
+vertical_alignment = 1
