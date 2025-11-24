@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddwd336cqaidd"]
+
+[ext_resource type="Script" uid="uid://8xlb1sel61pf" path="res://scripts/stock.gd" id="1_y5bj3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y5bj3"]
+
+[node name="Stock" type="Button"]
+offset_right = 115.0
+offset_bottom = 105.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_y5bj3")
+script = ExtResource("1_y5bj3")
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]

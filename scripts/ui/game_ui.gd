@@ -16,8 +16,8 @@ var state = PLAY
 
 ### TODO Could be improved. Likely needs to be redone or states moved around.
 func _ready() -> void:
+	timer_ui.text = ""
 	timer_node = timer_ui.get_tree().create_timer(GAME_TIME).timeout.connect(_placehold_gameover)
-	
 	pass
 
 
