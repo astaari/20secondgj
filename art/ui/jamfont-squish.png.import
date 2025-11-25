@@ -1,0 +1,25 @@
+[remap]
+
+importer="font_data_image"
+type="FontFile"
+uid="uid://cwqn03t3yausw"
+path="res://.godot/imported/jamfont-squish.png-1738762e40b43b63ffc4e7b6dfae1a0c.fontdata"
+
+[deps]
+
+source_file="res://art/ui/jamfont-squish.png"
+dest_files=["res://.godot/imported/jamfont-squish.png-1738762e40b43b63ffc4e7b6dfae1a0c.fontdata"]
+
+[params]
+
+character_ranges=PackedStringArray("0x30-0x39", "0x3f", "0x21", "\',\'", "\'.\'", "\':\'", "0x41-0x5A", "0x61-0x7A", "\' \'")
+kerning_pairs=PackedStringArray()
+columns=26
+rows=3
+image_margin=Rect2i(0, 0, 0, 0)
+character_margin=Rect2i(0, 1, 0, 0)
+ascent=0
+descent=0
+fallbacks=[]
+compress=false
+scaling_mode=2
