@@ -18,6 +18,9 @@ var state = PLAY
 func _ready() -> void:
 	timer_ui.text = ""
 	timer_node = timer_ui.get_tree().create_timer(GAME_TIME).timeout.connect(_placehold_gameover)
+	set_score(0)
+	GameState.score_changed.connect(set_score)
+
 	pass
 
 
@@ -38,13 +41,12 @@ func _placehold_gameover():
 	inst.global_position = (global_position + size) / 2.0 - (inst.size/2.0)
 	
 	
-
-	
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if state == PLAY:
 		GAME_TIME-=delta
 		update_time_label()
 	
-	
+
+
+func set_score(score : int ):
+	%Score.text = "%d" % score
