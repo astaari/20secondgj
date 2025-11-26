@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bnldlo5hxadjr"]
 
-[ext_resource type="Script" uid="uid://ykr3j586eb0i" path="res://scripts/draggable.gd" id="1_15mg1"]
+[ext_resource type="Script" uid="uid://ykr3j586eb0i" path="res://scenes/unused_atm/draggable.gd" id="1_15mg1"]
 [ext_resource type="Texture2D" uid="uid://coya0itsi4yr1" path="res://art/sprites/achievements/achievement2.png" id="1_g8jaa"]
 
 [node name="Draggable" type="Node2D"]

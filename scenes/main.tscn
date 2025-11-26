@@ -1,9 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://ca6ep2c1ulwod"]
 
+[ext_resource type="PackedScene" uid="uid://bf7js5xmur06k" path="res://scenes/person.tscn" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://yebgnxmfcxcn" path="res://scenes/ui/game_ui.tscn" id="1_o5qli"]
-[ext_resource type="PackedScene" uid="uid://ddwd336cqaidd" path="res://scenes/stock.tscn" id="2_0wfyh"]
 
 [node name="Main" type="Node2D"]
+
+[node name="Person" parent="." instance=ExtResource("1_0wfyh")]
+position = Vector2(592, 252)
 
 [node name="GameUi" parent="." instance=ExtResource("1_o5qli")]
 offset_right = 1152.0
@@ -14,24 +17,3 @@ offset_top = 400.0
 offset_right = 1152.0
 offset_bottom = 651.0
 color = Color(0.2592937, 0.2592937, 0.2592937, 1)
-
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-offset_top = 439.0
-offset_right = 1152.0
-offset_bottom = 609.0
-alignment = 1
-
-[node name="Stock" parent="HBoxContainer" instance=ExtResource("2_0wfyh")]
-layout_mode = 2
-
-[node name="Stock2" parent="HBoxContainer" instance=ExtResource("2_0wfyh")]
-layout_mode = 2
-title = "Granola Bars"
-
-[node name="Stock3" parent="HBoxContainer" instance=ExtResource("2_0wfyh")]
-layout_mode = 2
-title = "Energy Drinks"
-
-[node name="Stock4" parent="HBoxContainer" instance=ExtResource("2_0wfyh")]
-layout_mode = 2
-title = "Candy"
