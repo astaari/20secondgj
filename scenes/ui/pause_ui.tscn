@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bb0cimgdasd16"]
+[gd_scene load_steps=3 format=3 uid="uid://duf8ki5xop28p"]
 
-[ext_resource type="Script" uid="uid://6l7ncimgtmpc" path="res://scripts/ui/win_ui.gd" id="1_irtwj"]
-[ext_resource type="Theme" uid="uid://cg6l8dfnyd64s" path="res://art/themes/menu_ui.tres" id="2_ynfba"]
+[ext_resource type="Script" uid="uid://butm404rc6ngp" path="res://scripts/ui/pause_ui.gd" id="1_xt3ok"]
+[ext_resource type="Theme" uid="uid://cg6l8dfnyd64s" path="res://art/themes/menu_ui.tres" id="2_ghgjp"]
 
-[node name="WinUi" type="Panel"]
+[node name="PauseUI" type="Panel"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -12,14 +12,14 @@ offset_right = -768.0
 offset_bottom = -393.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_irtwj")
+script = ExtResource("1_xt3ok")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_right = 384.0
-offset_bottom = 51.0
-theme = ExtResource("2_ynfba")
-text = "FINISHED"
+offset_bottom = 74.0
+theme = ExtResource("2_ghgjp")
+text = "PAUSED"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -31,15 +31,15 @@ offset_right = 360.0
 offset_bottom = 256.0
 alignment = 1
 
-[node name="Retry" type="Button" parent="VBoxContainer"]
+[node name="Resume" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_ynfba")
-text = "Retry"
+theme = ExtResource("2_ghgjp")
+text = "Resume"
 
 [node name="ReturnToMenu" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_ynfba")
+theme = ExtResource("2_ghgjp")
 text = "Return to menu"
 
-[connection signal="button_up" from="VBoxContainer/Retry" to="." method="_on_retry_button_up"]
+[connection signal="button_up" from="VBoxContainer/Resume" to="." method="_on_resume_button_up"]
 [connection signal="button_up" from="VBoxContainer/ReturnToMenu" to="." method="_on_return_to_menu_button_up"]

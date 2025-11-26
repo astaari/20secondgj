@@ -1,12 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://ca6ep2c1ulwod"]
+[gd_scene load_steps=2 format=3 uid="uid://ca6ep2c1ulwod"]
 
-[ext_resource type="PackedScene" uid="uid://bf7js5xmur06k" path="res://scenes/person.tscn" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://yebgnxmfcxcn" path="res://scenes/ui/game_ui.tscn" id="1_o5qli"]
 
 [node name="Main" type="Node2D"]
 
-[node name="Person" parent="." instance=ExtResource("1_0wfyh")]
-position = Vector2(592, 252)
+[node name="SpawnNode" type="Node2D" parent="."]
+position = Vector2(594, 254)
 
 [node name="GameUi" parent="." instance=ExtResource("1_o5qli")]
 offset_right = 1152.0

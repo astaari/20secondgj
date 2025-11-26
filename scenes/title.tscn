@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://baduamebprafn"]
+[gd_scene load_steps=8 format=3 uid="uid://baduamebprafn"]
 
 [ext_resource type="Script" uid="uid://dts88nl10n6lw" path="res://scripts/title.gd" id="1_4ignj"]
 [ext_resource type="Texture2D" uid="uid://c8xwv48m5857e" path="res://art/ui/play_button.png" id="2_wosw1"]
+[ext_resource type="Theme" uid="uid://cg6l8dfnyd64s" path="res://art/themes/menu_ui.tres" id="3_p6dhs"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p6dhs"]
 texture = ExtResource("2_wosw1")
@@ -39,11 +40,13 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_wosw1")
 
 [node name="Title" type="Label" parent="."]
 offset_left = -5.0
-offset_top = -3.0
+offset_top = 16.0
 offset_right = 1177.0
 offset_bottom = 393.0
+theme = ExtResource("3_p6dhs")
 theme_override_colors/font_color = Color(0.22670749, 0.22670749, 0.22670746, 1)
-theme_override_font_sizes/font_size = 128
+theme_override_font_sizes/font_size = 90
 text = "Game Title"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

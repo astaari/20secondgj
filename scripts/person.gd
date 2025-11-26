@@ -19,6 +19,8 @@ const NOTHING = 3
 var move_with_mouse = false
 var state = 3
 
+var game_manager
+
 var rw = 1152.0
 var leftrw = (rw*2)/8
 var midrw = rw/2
@@ -28,6 +30,7 @@ var startY
 const TWEEN_TIME : float = 0.2
 var moving : bool = false
 var type : TYPE 
+
 # Q: Do we want to use this throw script or maybe we just use buttons? 
 
 func _ready():
@@ -62,13 +65,18 @@ func _process(_delta):
 	if move_with_mouse:
 		#Move position
 		global_position = lerp(global_position,get_global_mouse_position(),0.2)
+		#Update rotation
+		var rot = (global_position.x / 750) - 0.8
+		self.rotation = lerp_angle(self.rotation,rot,0.1)
 	elif moving:
 		return
 	else:
 		match state:
 			NOTHING:
-				return	#do nothing
+				#Update rotation
+				self.rotation = lerp_angle(self.rotation,0.0,0.1)
 			RETURN: #Return to the center of the screen
+				#Update the rest of it
 				moving = true
 				var end_position =Vector2(midrw, startY)
 				(
@@ -106,15 +114,9 @@ func _process(_delta):
 
 
 func _die():
-					print("dead")
-					state = RETURN;
-					var inst = PERSON.instantiate()
-					#make sure it gets added after this one is freed
-					get_parent().call_deferred("add_child",inst)
-					inst.global_position = Vector2(midrw,startY)
-					inst.startY = startY
-					inst.z_index = -1
-					queue_free()
+	state = RETURN;
+	game_manager._spawn_person()
+	queue_free()
 	
 
 #Finalizes the players choice based on the cards x position
