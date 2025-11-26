@@ -2,6 +2,10 @@ extends Node2D
 
 const PERSON = preload("uid://bf7js5xmur06k")
 
+const HAPPY = preload("uid://dpbgplj5jmgqq")
+const NEUTRAL = preload("uid://dh0rrexx37iqc")
+const SAD = preload("uid://d2catoh7titvt")
+
 #TODO Might need to move some logic into a parent object so some game state is 
 # not coupled with person (example, correct vs incorrect)
 
@@ -9,7 +13,9 @@ const PERSON = preload("uid://bf7js5xmur06k")
 #NOTE: Temp, should probably create a resource to encapsulate - artifex
 enum TYPE{HUMAN=0,GOBLIN=1,VAMPIRE=2};
 
-@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var sprite_2d: Sprite2D = $Body
+@onready var face: Sprite2D = $Face
+
 
 const RETURN = 0
 const THROWLEFT = 1
@@ -22,9 +28,9 @@ var state = 3
 var game_manager
 
 var rw = 1152.0
-var leftrw = (rw*2)/8
+var leftrw = (rw*3)/8
 var midrw = rw/2
-var rightrw = (rw*6)/8
+var rightrw = (rw*5)/8
 var startY
 
 const TWEEN_TIME : float = 0.2
@@ -44,10 +50,9 @@ func _ready():
 			color = Color.RED;
 		TYPE.GOBLIN:
 			color = Color.GREEN;
-	$Sprite2D.modulate=color;
-			
-	
-			
+	sprite_2d.modulate=color;
+	face.modulate=color;
+	face.texture = NEUTRAL
 	print("Type:",type)
 
 
@@ -68,6 +73,13 @@ func _process(_delta):
 		#Update rotation
 		var rot = (global_position.x / 750) - 0.8
 		self.rotation = lerp_angle(self.rotation,rot,0.1)
+		#Change facial emotion
+		if position.x > rightrw:
+			face.texture = SAD
+		elif position.x > leftrw:
+			face.texture = NEUTRAL
+		else:
+			face.texture = HAPPY
 	elif moving:
 		return
 	else:
@@ -117,7 +129,6 @@ func _die():
 	state = RETURN;
 	game_manager._spawn_person()
 	queue_free()
-	
 
 #Finalizes the players choice based on the cards x position
 func _on_selector_button_up() -> void:

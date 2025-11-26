@@ -1,16 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://bf7js5xmur06k"]
+[gd_scene load_steps=5 format=3 uid="uid://bf7js5xmur06k"]
 
 [ext_resource type="Script" uid="uid://cohh0mco8ab8o" path="res://scripts/person.gd" id="1_5dovg"]
-[ext_resource type="Texture2D" uid="uid://lbarit3mp8r1" path="res://art/sprites/person.png" id="2_jf287"]
+[ext_resource type="Texture2D" uid="uid://b4wou6kbtyb6k" path="res://art/sprites/person1.png" id="2_jf287"]
+[ext_resource type="Texture2D" uid="uid://dpbgplj5jmgqq" path="res://art/sprites/happy.png" id="3_h4n5y"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5dovg"]
 
 [node name="Person" type="Node2D"]
 script = ExtResource("1_5dovg")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Body" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
 texture = ExtResource("2_jf287")
+
+[node name="Face" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("3_h4n5y")
 
 [node name="Selector" type="Button" parent="."]
 offset_left = -156.0

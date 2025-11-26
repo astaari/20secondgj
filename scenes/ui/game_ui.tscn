@@ -64,4 +64,4 @@ custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_fonts/font = ExtResource("2_xjfbv")
-text = "104"
+text = "0"
