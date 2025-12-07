@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Customer" load_steps=3 format=3 uid="uid://crr7mewxupjtj"]
+
+[ext_resource type="Script" uid="uid://c1c7qtcf7ehsh" path="res://resources/customer.gd" id="1_ads0f"]
+[ext_resource type="Texture2D" uid="uid://cmwprj6itxkse" path="res://art/customers/Girl_Com_jam.png" id="2_ectgm"]
+
+[resource]
+script = ExtResource("1_ads0f")
+sprite = ExtResource("2_ectgm")
+tags = Array[String](["stripes", "belt"])
+metadata/_custom_type_script = "uid://c1c7qtcf7ehsh"

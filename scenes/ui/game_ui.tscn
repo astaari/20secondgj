@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c47ill7eambgt" path="res://scripts/ui/game_ui.gd" id="1_gwk6t"]
 [ext_resource type="FontFile" uid="uid://ctdl3phqcehsb" path="res://art/ui/numbers.png" id="2_xjfbv"]
-[ext_resource type="Shader" uid="uid://dx3005afqh3ch" path="res://scenes/ui/colortext.gdshader" id="3_fct72"]
+[ext_resource type="Shader" uid="uid://dx3005afqh3ch" path="res://resources/shaders/colortext.gdshader" id="3_fct72"]
 [ext_resource type="FontFile" uid="uid://cwqn03t3yausw" path="res://art/ui/jamfont-squish.png" id="4_ru5ln"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v1bdg"]
@@ -45,12 +45,12 @@ vertical_alignment = 3
 [node name="HBoxContainer" type="VFlowContainer" parent="MarginContainer/MarginContainer"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-size_flags_horizontal = 8
+size_flags_horizontal = 0
 size_flags_vertical = 4
 
 [node name="ScoreText" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
-modulate = Color(0.58548534, 0.00012812405, 0.53650504, 1)
+modulate = Color(0, 0, 0, 1)
 material = SubResource("ShaderMaterial_v1bdg")
 layout_mode = 2
 size_flags_horizontal = 0

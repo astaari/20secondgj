@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Customer" load_steps=3 format=3 uid="uid://dy7i8lcph1ot4"]
+
+[ext_resource type="Script" uid="uid://c1c7qtcf7ehsh" path="res://resources/customer.gd" id="1_eyqnq"]
+[ext_resource type="Texture2D" uid="uid://cctuxxhk57k0s" path="res://art/customers/Elder_woman_jam.png" id="2_4n2cu"]
+
+[resource]
+script = ExtResource("1_eyqnq")
+sprite = ExtResource("2_4n2cu")
+tags = Array[String](["purple", "lipstick"])
+metadata/_custom_type_script = "uid://c1c7qtcf7ehsh"

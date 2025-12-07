@@ -1,4 +1,4 @@
-extends Node2D
+class_name Person extends Node2D
 
 const PERSON = preload("uid://bf7js5xmur06k")
 
@@ -28,14 +28,20 @@ var state = 3
 var game_manager
 
 var rw = 1152.0
-var leftrw = (rw*3)/8
-var midrw = rw/2
-var rightrw = (rw*5)/8
+var leftrw = -150
+var midrw = 0
+var rightrw = 150
 var startY
 
 const TWEEN_TIME : float = 0.2
 var moving : bool = false
 var type : TYPE 
+
+var customer_res : Customer : 
+	set(value):
+		customer_res = value
+		$Body.texture = customer_res.sprite
+		pass
 
 # Q: Do we want to use this throw script or maybe we just use buttons? 
 
@@ -67,6 +73,7 @@ func _unhandled_input(event: InputEvent) -> void:
 #NOTE: artifex - Needed to edit this a bit so the score would work properly
 #A good use case for tweens anyway.
 func _process(_delta):
+	print(position)
 	if move_with_mouse:
 		#Move position
 		global_position = lerp(global_position,get_global_mouse_position(),0.2)
@@ -75,11 +82,11 @@ func _process(_delta):
 		self.rotation = lerp_angle(self.rotation,rot,0.1)
 		#Change facial emotion
 		if position.x > rightrw:
-			face.texture = SAD
-		elif position.x > leftrw:
-			face.texture = NEUTRAL
-		else:
 			face.texture = HAPPY
+		elif position.x < leftrw:
+			face.texture = SAD
+		else:
+			face.texture = NEUTRAL
 	elif moving:
 		return
 	else:
@@ -102,7 +109,7 @@ func _process(_delta):
 				state=NOTHING
 			THROWLEFT:
 				moving = true
-				var end_position = Vector2(-500.0, startY)
+				var end_position = Vector2(-1000.0, startY)
 				(
 				get_tree()
 				.create_tween()
@@ -114,7 +121,7 @@ func _process(_delta):
 
 			THROWRIGHT: 
 				moving = true
-				var end_position = Vector2(rw+500.0, startY)
+				var end_position = Vector2(1000.0, startY)
 				(
 				get_tree()
 				.create_tween()
@@ -132,10 +139,10 @@ func _die():
 
 #Finalizes the players choice based on the cards x position
 func _on_selector_button_up() -> void:
-	if global_position.x > rightrw:
+	if position.x > rightrw:
 		print("Right!")
 		state = THROWRIGHT
-	elif global_position.x < leftrw:
+	elif position.x < leftrw:
 		print("Left!")
 		state = THROWLEFT
 	else:

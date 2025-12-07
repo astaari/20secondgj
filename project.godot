@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.5", "Forward Plus")
 [autoload]
 
 GameState="*res://scripts/global/game_state.gd"
+CustomerMap="*res://scripts/global/customer_data.gd"
 
 [file_customization]
 

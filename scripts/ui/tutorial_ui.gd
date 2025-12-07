@@ -1,7 +1,9 @@
-extends Panel
+class_name Tutorial extends Panel
 
 @onready var title: Label = $Title
 @onready var desc: Label = $Desc
+
+signal tutorial_finished
 
 var base_size = Vector2(384.0,256.0) 
 var game_manager
@@ -17,6 +19,7 @@ func _ready():
 	
 func _start_game():
 	game_manager._start_game()
+	tutorial_finished.emit()
 	queue_free()
 
 func _on_next_button_up() -> void:
