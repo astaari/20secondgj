@@ -1,6 +1,56 @@
-[gd_scene load_steps=2 format=3 uid="uid://ca6ep2c1ulwod"]
+[gd_scene load_steps=10 format=3 uid="uid://ca6ep2c1ulwod"]
 
 [ext_resource type="PackedScene" uid="uid://yebgnxmfcxcn" path="res://scenes/ui/game_ui.tscn" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://dgw1g88jhdtrs" path="res://art/Cafe_room_jam.png" id="2_sugp2"]
+[ext_resource type="Texture2D" uid="uid://dobnhrtsam2ov" path="res://art/coffee_smoke_efffect-Sheet.png" id="3_jyhfs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbgi4"]
+atlas = ExtResource("3_jyhfs")
+region = Rect2(0, 0, 9, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tefeu"]
+atlas = ExtResource("3_jyhfs")
+region = Rect2(9, 0, 9, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6xl0"]
+atlas = ExtResource("3_jyhfs")
+region = Rect2(18, 0, 9, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tipki"]
+atlas = ExtResource("3_jyhfs")
+region = Rect2(27, 0, 9, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85g3d"]
+atlas = ExtResource("3_jyhfs")
+region = Rect2(36, 0, 9, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_choun"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbgi4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tefeu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6xl0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tipki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85g3d")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
 
 [node name="Main" type="Node2D"]
 
@@ -16,3 +66,16 @@ offset_top = 400.0
 offset_right = 1152.0
 offset_bottom = 651.0
 color = Color(0.2592937, 0.2592937, 0.2592937, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+offset_right = 1148.0
+offset_bottom = 400.0
+texture = ExtResource("2_sugp2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TextureRect"]
+z_index = 1
+position = Vector2(724, 266)
+sprite_frames = SubResource("SpriteFrames_choun")
+animation = &"new_animation"
+frame_progress = 0.38099587

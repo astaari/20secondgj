@@ -1,0 +1,25 @@
+[remap]
+
+importer="font_data_image"
+type="FontFile"
+uid="uid://blji1pj15rnis"
+path="res://.godot/imported/Font_jam-Sheet-compact.png-ebff008a9b8d5efd86bd7aa4073e3c76.fontdata"
+
+[deps]
+
+source_file="res://art/ui/Font_jam-Sheet-compact.png"
+dest_files=["res://.godot/imported/Font_jam-Sheet-compact.png-ebff008a9b8d5efd86bd7aa4073e3c76.fontdata"]
+
+[params]
+
+character_ranges=PackedStringArray("\'0\'-\'9\'", "\'?\',\'!\',\',\',\'.\',\':\'", "\'Ä\',\'ä\',\'Ö\',\'ö\',\'Ü\',\'ü\',\'ẞ\'", "\'A\'-\'Z\'", "\'a\'-\'z\'", "\' \'")
+kerning_pairs=PackedStringArray()
+columns=26
+rows=8
+image_margin=Rect2i(0, 0, 0, 0)
+character_margin=Rect2i(0, 0, 0, 0)
+ascent=0
+descent=0
+fallbacks=[]
+compress=true
+scaling_mode=2

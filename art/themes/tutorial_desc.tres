@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://ctay4wfs5auo"]
 
-[ext_resource type="FontFile" uid="uid://cwqn03t3yausw" path="res://art/ui/jamfont-squish.png" id="1_0su5j"]
+[ext_resource type="FontFile" uid="uid://blji1pj15rnis" path="res://art/ui/Font_jam-Sheet-compact.png" id="1_0su5j"]
 
 [resource]
 Button/font_sizes/font_size = 16
