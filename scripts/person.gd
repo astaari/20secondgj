@@ -10,8 +10,7 @@ const SAD = preload("uid://d2catoh7titvt")
 # not coupled with person (example, correct vs incorrect)
 
 
-#NOTE: Temp, should probably create a resource to encapsulate - artifex
-enum TYPE{HUMAN=0,GOBLIN=1,VAMPIRE=2};
+signal person_sent(direction,resource)
 
 @onready var sprite_2d: Sprite2D = $Body
 @onready var face: Sprite2D = $Face
@@ -35,7 +34,7 @@ var startY
 
 const TWEEN_TIME : float = 0.2
 var moving : bool = false
-var type : TYPE 
+
 
 var customer_res : Customer : 
 	set(value):
@@ -47,19 +46,9 @@ var customer_res : Customer :
 
 func _ready():
 	startY = position.y
-	type = (randi()%3) as TYPE
-	
-	#NOTE: artifex - This is temporary to visually distinguish type
-	var color = Color.WHITE;
-	match type:
-		TYPE.HUMAN:
-			color = Color.RED;
-		TYPE.GOBLIN:
-			color = Color.GREEN;
-	sprite_2d.modulate=color;
-	face.modulate=color;
+
+
 	face.texture = NEUTRAL
-	print("Type:",type)
 
 
 
@@ -73,7 +62,6 @@ func _unhandled_input(event: InputEvent) -> void:
 #NOTE: artifex - Needed to edit this a bit so the score would work properly
 #A good use case for tweens anyway.
 func _process(_delta):
-	print(position)
 	if move_with_mouse:
 		#Move position
 		global_position = lerp(global_position,get_global_mouse_position(),0.2)
@@ -113,10 +101,8 @@ func _process(_delta):
 				(
 				get_tree()
 				.create_tween()
-				.tween_property(self,"position",end_position,TWEEN_TIME).finished.connect(_die)
+				.tween_property(self,"position",end_position,TWEEN_TIME).finished.connect(func(): _die("left"))
 				)
-				if type != TYPE.HUMAN:
-					GameState.score +=1
 				state = NOTHING
 
 			THROWRIGHT: 
@@ -125,16 +111,15 @@ func _process(_delta):
 				(
 				get_tree()
 				.create_tween()
-				.tween_property(self,"position",end_position,TWEEN_TIME).finished.connect(_die)
+				.tween_property(self,"position",end_position,TWEEN_TIME).finished.connect(func(): _die("right"))
 				)
-				if type == TYPE.HUMAN:
-					GameState.score +=1
 				state = NOTHING
 
 
-func _die():
+func _die(direction : String):
 	state = RETURN;
 	game_manager._spawn_person()
+	person_sent.emit(direction,customer_res)
 	queue_free()
 
 #Finalizes the players choice based on the cards x position

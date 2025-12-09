@@ -27,9 +27,14 @@ func _ready() -> void:
 func _start_game():
 	timer_node = timer_ui.get_tree().create_timer(GAME_TIME).timeout.connect(_gameover)
 	set_score(0)
-	GameState.score_changed.connect(set_score)
+	#GameState.score_changed.connect(set_score)
 
 
+func set_banned_items(items : Array):
+	var lbl = "BANNED:\n"
+	for s in items:
+		lbl+=s + "\n"
+	%BannedLabel.text = lbl
 
 func update_time_label():
 	timer_ui.text = "%.2f" % GAME_TIME

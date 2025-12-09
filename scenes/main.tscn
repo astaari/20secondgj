@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://ca6ep2c1ulwod"]
+[gd_scene load_steps=14 format=3 uid="uid://ca6ep2c1ulwod"]
 
 [ext_resource type="Script" uid="uid://knsa203cfb7e" path="res://scripts/main.gd" id="1_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://yebgnxmfcxcn" path="res://scenes/ui/game_ui.tscn" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://dgw1g88jhdtrs" path="res://art/Cafe_room_jam.png" id="2_sugp2"]
 [ext_resource type="Texture2D" uid="uid://dobnhrtsam2ov" path="res://art/coffee_smoke_efffect-Sheet.png" id="3_jyhfs"]
+[ext_resource type="Script" uid="uid://cvl0et3kqnes8" path="res://scripts/animated_obj.gd" id="5_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://duf8ki5xop28p" path="res://scenes/ui/pause_ui.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://bb0cimgdasd16" path="res://scenes/ui/win_ui.tscn" id="6_tefeu"]
 
@@ -29,7 +30,22 @@ region = Rect2(36, 0, 9, 12)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_choun"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbgi4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tefeu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6xl0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tipki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85g3d")
+}],
 "loop": true,
 "name": &"default",
 "speed": 5.0
@@ -62,6 +78,7 @@ script = ExtResource("1_jyhfs")
 position = Vector2(594, 254)
 
 [node name="GameUi" parent="." instance=ExtResource("1_o5qli")]
+z_index = 1
 offset_right = 1152.0
 offset_bottom = 648.0
 
@@ -82,8 +99,7 @@ texture = ExtResource("2_sugp2")
 z_index = 1
 position = Vector2(724, 266)
 sprite_frames = SubResource("SpriteFrames_choun")
-animation = &"new_animation"
-frame_progress = 0.38099587
+script = ExtResource("5_o6xl0")
 
 [node name="PauseUI" parent="." instance=ExtResource("5_tbgi4")]
 visible = false

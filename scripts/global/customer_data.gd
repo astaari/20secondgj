@@ -8,7 +8,7 @@ var customers : Dictionary[int,Customer]= {
 #not final. Just examples
 var available_tags : Array[String]= [
 	"stripes",
-	"jeans",
+	"dress",
 	"purple",
 	"lipstick"
 ]
